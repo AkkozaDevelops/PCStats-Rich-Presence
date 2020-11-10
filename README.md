@@ -11,6 +11,7 @@ To start off, you need Python >=3.5 *[make sure to install with PATH]*, and Visu
 You also need to install these packages using these commands in the command prompt.
 
 > pip install --user pypresence
+
 > pip install --user psutil
 
 Once you install those 2 packages, you should be almost ready.
