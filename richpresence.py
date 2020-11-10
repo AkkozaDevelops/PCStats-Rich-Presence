@@ -11,10 +11,10 @@ while True:
     cpu_per = round(psutil.cpu_percent(),1)
     cpu_freq = psutil.cpu_freq().current/1000
     mem = psutil.virtual_memory()
-    mem_per = round(psutil.virtual_memory().percent,1)
+    mem_per = round(mem.percent,1)
 
     RPC.update(
-        details="RAM: "+str(mem_per)+"%", 
+        details="RAM: "+str(mem_per)+"% (" + str(round(mem.used / 1000000000, 2)) + "/" + str(round(mem.total / 1000000000, 2)) + " GB)", 
         state="CPU: "+str(cpu_per)+"% @ " + str(cpu_freq) + "GHz",
         large_image="CHANGE ME TO BIG IMAGE KEY",
         large_text="CHANGE ME TO WHAT YOU WANT HOVER TEXT TO BE",
