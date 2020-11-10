@@ -9,7 +9,7 @@ RPC.connect()
 
 while True:
     cpu_per = round(psutil.cpu_percent(),1)
-    cpu_freq = psutil.cpu_freq().current/1000
+    cpu_freq = round(psutil.cpu_freq().current/1000, 2)
     mem = psutil.virtual_memory()
     mem_per = round(mem.percent,1)
 
