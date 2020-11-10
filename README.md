@@ -4,6 +4,10 @@ Discord has a cool application feature that allows you to add a rich presence to
 
 ![picture of rich presence on my user.](https://i.imgur.com/cxfcTBX.png)
 
+## Difference between Console Version and No Console Version
+
+Python has a different extension *[.pyw]* that is differnet from *[.py]* which just disables the console from ever appearing.
+
 ## How to setup
 
 To start off, you need Python >=3.5 *[make sure to install with PATH]*, and Visual Studio Community 2019 with the **Desktop development with C++** *[for psutil package]*
