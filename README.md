@@ -6,7 +6,7 @@ Discord has a cool application feature that allows you to add a rich presence to
 
 ## How to setup
 
-To start off, you need Python >=3.5 *[make sure to install with PATH]*, and Visual Studio 2019 with the C++ Desktop Development Package *[for psutil package]*
+To start off, you need Python >=3.5 *[make sure to install with PATH]*, and Visual Studio Community 2019 with the C++ Desktop Development Package *[for psutil package]*
 
 You also need to install these packages using these commands in the command prompt.
 
