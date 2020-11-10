@@ -24,6 +24,7 @@ Next; you need to create a Discord Application through Discord's Developer Porta
 ![image showing the "Create an Application" screen.](https://i.imgur.com/4OXlJVw.png)
 
 Once you make your application, head on over to **"Rich Presence"**
+
 ![showing the location of the rich presence tab.](https://i.imgur.com/F9pxRlb.png)
 
 This is where you'll want to upload all your image assets, and your "game" invite cover image.
@@ -43,6 +44,7 @@ Once you grab your client id, go ahead and replace it!
 So onto changing the images and their text.
 
 You need to get those snazzy asset names from what you just uploaded for the images, and replace them for the **large_image** and or **small_image** values.
+
 ![showing large_image and small_image values](https://i.imgur.com/yhixBlG.png)
 
 
