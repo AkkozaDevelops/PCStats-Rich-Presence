@@ -1,6 +1,7 @@
 ## Discord Rich Presence
 
 Discord has a cool application feature that allows you to add a rich presence to a user.
+
 ![picture of rich presence on my user.](https://i.imgur.com/cxfcTBX.png)
 
 ## How to setup
@@ -28,7 +29,9 @@ Once you make your application, head on over to **"Rich Presence"**
 ![showing the location of the rich presence tab.](https://i.imgur.com/F9pxRlb.png)
 
 This is where you'll want to upload all your image assets, and your "game" invite cover image.
+
 ![showing asset example.](https://i.imgur.com/g1BVyLI.png)
+
 You'll need those asset names in a second for when we start editing the script.
 *[Used for the image icons on the Rich Presence]*
 
@@ -53,6 +56,7 @@ If you don't wish to have hover text or a image in a certain section, you can **
 ![deleting large_image and large_text field](https://i.imgur.com/pBDDoN5.gif)
 
 And if you don't wish to have the "game" invite feature, you can remove the **party_id** line and the **join** line
+
 ![gif of me deleting the lines.](https://i.imgur.com/TKaSXl9.gif)
 
 ## Once you've done all of this, you are ready to run the script!
