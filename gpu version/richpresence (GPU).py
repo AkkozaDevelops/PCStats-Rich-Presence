@@ -19,14 +19,19 @@ else:
         mem_per = round(mem.percent,1)
         primary_gpu = GPUtil.getGPUs()[0]
 
-        RPC.update(
-            details="CPU: "+str(cpu_per)+"% @ " + str(cpu_freq) + "GHz",
-            state="GPU: " + str(primary_gpu.load * 100) + "% (" + str(round(primary_gpu.memoryUsed / 1000, 1)) + "/" + str(round(primary_gpu.memoryTotal / 1000, 1)) + "GB)",
-            large_image="CHANGE ME TO BIG IMAGE KEY",
-            large_text="CHANGE ME TO WHAT YOU WANT HOVER TEXT TO BE",
-            small_image="CHANGE ME TO SMALL IMAGE KEY",
-            small_text="CHANGE ME TO WHAT YOU WANT HOVER TEXT TO BE",
-            party_id="Fake Party ID!",
-            join="Fake Join ID!"
-        )
+        try:
+            RPC.update(
+                details="CPU: "+str(cpu_per)+"% @ " + str(cpu_freq) + "GHz",
+                state="GPU: " + str(primary_gpu.load * 100) + "% (" + str(round(primary_gpu.memoryUsed / 1000, 1)) + "/" + str(round(primary_gpu.memoryTotal / 1000, 1)) + "GB)",
+                large_image="CHANGE ME TO BIG IMAGE KEY",
+                large_text="CHANGE ME TO WHAT YOU WANT HOVER TEXT TO BE",
+                small_image="CHANGE ME TO SMALL IMAGE KEY",
+                small_text="CHANGE ME TO WHAT YOU WANT HOVER TEXT TO BE",
+                party_id="Fake Party ID!",
+                join="Fake Join ID!"
+            )
+        except:
+            print("There was an error; trying to reattach hook [Discord closed?]")
+            RPC.connect()
+        
         time.sleep(15)
