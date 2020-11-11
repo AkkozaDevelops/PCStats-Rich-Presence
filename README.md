@@ -20,6 +20,8 @@ You also need to install these packages using these commands in the command prom
 
 > pip install --user psutil
 
+> pip install --user uptime
+
 Once you install those 2 packages, you should be almost ready.
 
 Next; you need to create a Discord Application through Discord's Developer Portal.
