@@ -1,5 +1,6 @@
 from pypresence import Presence
 import psutil
+import cpuinfo
 import uptime
 import time
 
@@ -7,6 +8,11 @@ client_id = "CLIENT ID HERE"
 RPC = Presence(client_id)
 
 start_time = time.time() - uptime.uptime()
+
+try:
+    cpu_name = cpuinfo.get_cpu_info()["brand_raw"]
+except:
+    cpu_name = "Unknown CPU"
 
 try:
     RPC.connect()
@@ -38,7 +44,7 @@ while True:
     try:
         RPC.update(
             details="RAM: "+str(mem_per)+"% (" + str(round(mem.used / 1000000000, 2)) + "/" + str(round(mem.total / 1000000000, 2)) + " GB)", 
-            state="CPU: "+str(cpu_per)+"% @ " + str(cpu_freq) + "GHz",
+            state="CPU: "+str(cpu_per)+"% @ " + str(cpu_freq) + "GHz (" + cpu_name + ")",
             large_image="CHANGE ME TO BIG IMAGE KEY",
             large_text="CHANGE ME TO WHAT YOU WANT HOVER TEXT TO BE",
             small_image="CHANGE ME TO SMALL IMAGE KEY",
