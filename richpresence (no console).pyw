@@ -5,7 +5,23 @@ import time
 client_id = "CLIENT ID HERE"
 RPC = Presence(client_id)
 
-RPC.connect()
+try:
+    RPC.connect()
+except:
+    connected = False
+
+    while True:
+        try:
+            RPC.connect()
+            connected = True
+        except:
+            connected = False
+
+        if connected == True:
+            break
+
+        time.sleep(1)
+
 
 while True:
     cpu_per = round(psutil.cpu_percent(),1)
