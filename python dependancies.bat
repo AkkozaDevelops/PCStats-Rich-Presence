@@ -1,6 +1,9 @@
 @echo off
 cls
 
+echo Upgrading pip
+py -m pip install –upgrade pip
+
 pip install --user pypresence
 pip install --user psutil
 pip install --user uptime
