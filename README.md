@@ -4,6 +4,21 @@ Discord has a cool application feature that allows you to add a rich presence to
 
 ![picture of rich presence on my user.](https://i.imgur.com/cxfcTBX.png)
 
+## Start on Startup
+
+You can easily have this run when your computer starts by putting it in your Startup Folder
+
+You can get there by doing **WIN + R** or typing **run** in the Windows Search bar.
+
+![picture of run](https://i.imgur.com/WYecEkf.png)
+
+You then want to type the following into **Run** and press **OK**
+
+> shell:startup
+
+This will then open a folder, which you can drag the Python Script into.
+
+
 ## Difference between Console Version and No Console Version
 
 Python has a different extension *[.pyw]* that is differnet from *[.py]* which just disables the console from ever appearing.
