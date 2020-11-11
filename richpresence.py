@@ -1,17 +1,29 @@
-from pypresence import Presence
-import uptime
-import psutil
-import os
-import cpuinfo
+
 import time
-import json
+
+try:
+    from pypresence import Presence
+    import uptime
+    import psutil
+    import os
+    import cpuinfo
+    import json
+except:
+    print("\nPlease make sure you installed all the dependancies!\n\nYou can easily install them all by running the \"python dependancies.bat\" file in the GitHub Repo\n[https://github.com/AkkozaDevelops/PCStats-Rich-Presence]")
+
+    while True:
+        time.sleep(1)
+        
+
+def start(self):
+    print("started.")
 
 config = None
 
 try:
     config = json.load(open("./config.json", 'r'))
     print("Successfully loaded config.json")
-    print(config)
+    print("\n\nConfig file reads:\n" + str(config))
 except:
     print("config.json does not exist.")
     
@@ -23,14 +35,29 @@ if not (config == None):
     cpu_name = cpuinfo.get_cpu_info()["brand_raw"]
     start_time = time.time() - uptime.uptime()
 
+
+    if config["order"][0] == "GPU" or config["order"][1] == "GPU":
+        try:
+            import GPUtil
+
+            if len(GPUtil.getGPUs()) == 0:
+                print("\n\nYou do not have any NVIDIA GPUs installed in your system!")
+
+                while True:
+                    time.sleep(1)
+        except:
+            print("\n\nPlease install the GPUtil package!\nRestart this program when you have installed it.")
+            
+            while True:
+                time.sleep(1)
     
 
     try:
         RPC.connect()
-        print("Found Discord!")
+        print("\nFound Discord!")
     except:
         connected = False
-        print("Searching for Discord.")
+        print("\nSearching for Discord.")
 
         while True:
             try:
@@ -40,7 +67,7 @@ if not (config == None):
                 connected = False
 
             if connected == True:
-                print("Found Discord!")
+                print("\nFound Discord!")
                 break
 
             time.sleep(1)
@@ -78,11 +105,15 @@ if not (config == None):
             topText = "CPU: "+str(cpu_per)+"% " + cpuAddon
         elif config["order"][0] == "RAM":
             topText = "RAM: "+str(mem_per)+"% (" + str(round(mem.used / 1000000000, 2)) + "/" + str(round(mem.total / 1000000000, 2)) + " GB)"
+        elif config["order"][0] == "GPU":
+            topText = "GPU: " + "GPU: " + str(GPUtil.getGPUs()[0].load * 100) + "% (" + str(round(GPUtil.getGPUs()[0].memoryUsed / 1000, 1)) + "/" + str(round(GPUtil.getGPUs()[0].memoryTotal / 1000, 1)) + "GB)"
 
         if config["order"][1] == "CPU":
             bottomText = "CPU: "+str(cpu_per)+"% " + cpuAddon
         elif config["order"][1] == "RAM":
             bottomText = "RAM: "+str(mem_per)+"% (" + str(round(mem.used / 1000000000, 2)) + "/" + str(round(mem.total / 1000000000, 2)) + " GB)"
+        elif config["order"][1] == "GPU":
+            bottomText = "GPU: " + "GPU: " + str(GPUtil.getGPUs()[0].load * 100) + "% (" + str(round(GPUtil.getGPUs()[0].memoryUsed / 1000, 1)) + "/" + str(round(GPUtil.getGPUs()[0].memoryTotal / 1000, 1)) + "GB)"
 
 
 
@@ -107,7 +138,7 @@ if not (config == None):
 
             time.sleep(15)
         except:
-            print("Lost connection to discord.")
+            print("\nLost connection to discord.")
             connected = False
             while True:
 
@@ -118,7 +149,7 @@ if not (config == None):
                     connected = False#
 
                 if connected == True:
-                    print("Found Discord!")
+                    print("\nFound Discord!")
                     break
 
                 time.sleep(1)
