@@ -1,0 +1,24 @@
+{
+    "client_id": "PUT CLIENT ID HERE",
+
+    "images" : {
+        "large_image": null,
+        "small_image": null
+    },
+
+    "hover_text": {
+        "large_image_text": null,
+        "small_image_text": null
+    },
+
+    "order": [
+        "CPU",
+        "RAM"
+    ],
+
+    "includePartyInvite": true,
+    "includeUptime": true,
+
+    "includeCPU_frequency": true,
+    "includeCPU_model": true
+}
