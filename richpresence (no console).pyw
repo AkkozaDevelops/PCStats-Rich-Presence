@@ -145,7 +145,7 @@ if not (config == None):
 
             time.sleep(15)
         except Exception as e:
-            if str(e) == "Pipe Not Found - Is Discord Running?" or str(e) == "Client ID is Invalid":
+            if str(e) == "Pipe Not Found - Is Discord Running?" :
                 print("\nLost connection to discord.")
                 connected = False
                 while True:
@@ -161,6 +161,11 @@ if not (config == None):
                         break
 
                 time.sleep(1)
+            elif str(e) == "Client ID is Invalid":
+                print("\nMake sure your Client ID is valid!\n")
+
+                while True:
+                    time.sleep(1)
             else:
                 print("There was an error\n\n" + str(e))
 
