@@ -3,6 +3,7 @@ print("Created by AkkozaDevelops\n\nGitHub Repo: https://github.com/AkkozaDevelo
 # You don't have to keep this, but I would rather you do <3
 
 import time
+import re
 
 try:
     from pypresence import Presence
@@ -11,24 +12,24 @@ try:
     import os
     import cpuinfo
     import json
-except:
+except Exception as e:
     print("\nPlease make sure you installed all the dependancies!\n\nYou can easily install them all by running the \"python dependancies.bat\" file in the GitHub Repo\n[https://github.com/AkkozaDevelops/PCStats-Rich-Presence]")
+    print("\n\nError:\n" + str(e))
 
     while True:
         time.sleep(1)
-        
 
-def start(self):
-    print("started.")
+me = os.path.dirname(os.path.abspath(__file__))     
 
 config = None
 
 try:
-    config = json.load(open("./config.json", 'r'))
+    config = json.load(open(me + "/config.json", 'r'))
     print("Successfully loaded config.json")
     print("\n\nConfig file reads:\n" + str(config))
-except:
+except Exception as e:
     print("config.json does not exist.")
+    print("Error\n" + str(e))
     
 
 if not (config == None):
@@ -58,22 +59,25 @@ if not (config == None):
     try:
         RPC.connect()
         print("\nFound Discord!")
-    except:
-        connected = False
-        print("\nSearching for Discord.")
+    except Exception as e:
+        if str(e) == "Pipe Not Found - Is Discord Running?":
+            connected = False
+            print("\nSearching for Discord.")
 
-        while True:
-            try:
-                RPC.connect()
-                connected = True
-            except:
-                connected = False
+            while True:
+                try:
+                    RPC.connect()
+                    connected = True
+                except:
+                    connected = False
 
-            if connected == True:
-                print("\nFound Discord!")
-                break
+                if connected == True:
+                    print("\nFound Discord!")
+                    break
 
-            time.sleep(1)
+                time.sleep(1)
+        else:
+            print("There was an error\n\n" + str(e))
 
 
 
@@ -140,19 +144,26 @@ if not (config == None):
             )
 
             time.sleep(15)
-        except:
-            print("\nLost connection to discord.")
-            connected = False
-            while True:
+        except Exception as e:
+            if str(e) == "Pipe Not Found - Is Discord Running?" or str(e) == "Client ID is Invalid":
+                print("\nLost connection to discord.")
+                connected = False
+                while True:
 
-                try:
-                    RPC.connect()
-                    connected = True
-                except:
-                    connected = False#
+                    try:
+                        RPC.connect()
+                        connected = True
+                    except:
+                        connected = False#
 
-                if connected == True:
-                    print("\nFound Discord!")
-                    break
+                    if connected == True:
+                        print("\nFound Discord!")
+                        break
 
                 time.sleep(1)
+            else:
+                print("There was an error\n\n" + str(e))
+
+                while True:
+                    time.sleep(1)
+            
