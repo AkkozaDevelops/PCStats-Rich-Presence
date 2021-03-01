@@ -1,5 +1,5 @@
 
-print("Created by AkkozaDevelops\n\nGitHub Repo: https://github.com/AkkozaDevelops/PCStats-Rich-Presence\n\nIssues? you can either\nAdd me on Discord [Akkoza#8767]\nOR\nCreate a issue request on the Github Repo")
+print("Created by AkkozaDevelops\n\nGitHub Repo: https://github.com/AkkozaDevelops/PCStats-Rich-Presence\n\nIssues? you can either\nAdd me on Discord [Akkoza#3400]\nOR\nCreate a issue request on the Github Repo")
 # You don't have to keep this, but I would rather you do <3
 
 import time
@@ -113,14 +113,14 @@ if not (config == None):
         elif config["order"][0] == "RAM":
             topText = "RAM: "+str(mem_per)+"% (" + str(round(mem.used / 1000000000, 2)) + "/" + str(round(mem.total / 1000000000, 2)) + " GB)"
         elif config["order"][0] == "GPU":
-            topText = "GPU: " + "GPU: " + str(GPUtil.getGPUs()[0].load * 100) + "% (" + str(round(GPUtil.getGPUs()[0].memoryUsed / 1000, 1)) + "/" + str(round(GPUtil.getGPUs()[0].memoryTotal / 1000, 1)) + "GB)"
+            topText = "GPU: " + str(GPUtil.getGPUs()[0].load * 100) + "% (" + str(round(GPUtil.getGPUs()[0].memoryUsed / 1000, 1)) + "/" + str(round(GPUtil.getGPUs()[0].memoryTotal / 1000, 1)) + "GB)"
 
         if config["order"][1] == "CPU":
             bottomText = "CPU: "+str(cpu_per)+"% " + cpuAddon
         elif config["order"][1] == "RAM":
             bottomText = "RAM: "+str(mem_per)+"% (" + str(round(mem.used / 1000000000, 2)) + "/" + str(round(mem.total / 1000000000, 2)) + " GB)"
         elif config["order"][1] == "GPU":
-            bottomText = "GPU: " + "GPU: " + str(GPUtil.getGPUs()[0].load * 100) + "% (" + str(round(GPUtil.getGPUs()[0].memoryUsed / 1000, 1)) + "/" + str(round(GPUtil.getGPUs()[0].memoryTotal / 1000, 1)) + "GB)"
+            bottomText = "GPU: " + str(GPUtil.getGPUs()[0].load * 100) + "% (" + str(round(GPUtil.getGPUs()[0].memoryUsed / 1000, 1)) + "/" + str(round(GPUtil.getGPUs()[0].memoryTotal / 1000, 1)) + "GB)"
 
 
 
@@ -139,7 +139,7 @@ if not (config == None):
                     small_image=config["images"]["small_image"],
                     small_text=config["hover_text"]["small_image_text"],
                     party_id=gameId,
-                    join=gameId + gameId,
+                    join=gameId or "" + gameId or "",
                     start=start_time
             )
 
