@@ -1,5 +1,5 @@
 
-print("Created by AkkozaDevelops\n\nGitHub Repo: https://github.com/AkkozaDevelops/PCStats-Rich-Presence\n\nIssues? you can either\nAdd me on Discord [Akkoza#8767]\nOR\nCreate a issue request on the Github Repo")
+print("Created by AkkozaDevelops\n\nGitHub Repo: https://github.com/AkkozaDevelops/PCStats-Rich-Presence\n\nIssues? you can either\nAdd me on Discord [Akkoza#3400]\nOR\nCreate a issue request on the Github Repo")
 # You don't have to keep this, but I would rather you do <3
 
 import time
