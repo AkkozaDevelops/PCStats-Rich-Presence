@@ -1,8 +1,8 @@
 {
-    "client_id": "PUT CLIENT ID HERE",
+    "client_id": "775637920333037579",
 
     "images" : {
-        "large_image": null,
+        "large_image": "shaark",
         "small_image": null
     },
 
@@ -16,7 +16,7 @@
         "RAM"
     ],
 
-    "includePartyInvite": true,
+    "includePartyInvite": false,
     "includeUptime": true,
 
     "includeCPU_frequency": true,

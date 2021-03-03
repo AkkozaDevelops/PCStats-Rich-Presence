@@ -88,6 +88,7 @@ if not (config == None):
         mem_per = round(mem.percent,1)
 
         gameId = None
+        joinId = None
 
         topText = ""
         bottomText = ""
@@ -99,6 +100,7 @@ if not (config == None):
 
         if config["includePartyInvite"] == True:
             gameId = "ayaya"
+            joinId = "boobs"
 
         if config["includeCPU_frequency"] == True:
             cpuAddon = cpuAddon + "@ " + str(cpu_freq) + "GHz "
@@ -129,7 +131,7 @@ if not (config == None):
         
         if topText == "":
             topText = None
-
+            
         try:
             RPC.update(
                     details=topText,
@@ -139,9 +141,9 @@ if not (config == None):
                     small_image=config["images"]["small_image"],
                     small_text=config["hover_text"]["small_image_text"],
                     party_id=gameId,
-                    join=gameId or "" + gameId or "",
+                    join=joinId,
                     start=start_time
-            )
+                    )
 
             time.sleep(15)
         except Exception as e:
