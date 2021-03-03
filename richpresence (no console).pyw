@@ -90,6 +90,8 @@ if not (config == None):
         gameId = None
         joinId = None
 
+        buttonsContainer = None
+
         topText = ""
         bottomText = ""
 
@@ -107,6 +109,17 @@ if not (config == None):
 
         if config["includeCPU_model"] == True:
             cpuAddon = cpuAddon + "(" + cpu_name + ")"
+
+        if config["buttonsEnabled"] == True:
+            newTable = []
+            
+
+            for table in config["buttons"]:
+                if table["label"] and table["label"] != "":
+                    if table["url"] and table["url"] != "":
+                        newTable.insert(len(newTable)+1, table)
+
+            buttonsContainer = newTable
 
 
 
@@ -142,6 +155,7 @@ if not (config == None):
                     small_text=config["hover_text"]["small_image_text"],
                     party_id=gameId,
                     join=joinId,
+                    buttons=buttonsContainer,
                     start=start_time
                     )
 
