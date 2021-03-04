@@ -1,4 +1,5 @@
 
+
 ## Discord Rich Presence
 
   
@@ -146,6 +147,18 @@ To set your **large_image** and **small_image** you must change **null** into a 
 To set the **hover text** of your large and small image, you do basically the same thing; You change **null** into a **string** and put whatever you want to show when you hover into it.
 
 ![gif of me setting the hover text.](https://i.imgur.com/Xhpwa82.gif)
+
+To setup your buttons, you first need to enable them at the bottom by changing ***"buttonsEnabled"*** to **true** instead of **false**
+
+![gif of me enabling buttonsEnabled](https://imgur.com/ycjsbxV.gif)
+
+After you've done that, you can go over to the ***"buttons"*** section and edit there.
+*NOTE: If you do not include a URL or Label Text, it will not appear.*
+
+![changing the stuff](https://imgur.com/j89aOLu.gif)
+
+*If you don't want the second button, you can just leave it blank or remove it entirely from the code.*
+***[MAX 2 BUTTONS]***
 
 
 So now onto changing the **CPU**, **RAM**, and **GPU** display!
