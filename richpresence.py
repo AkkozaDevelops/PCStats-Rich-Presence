@@ -4,6 +4,8 @@ def main_script():
     print("Created by AkkozaDevelops\n\nGitHub Repo: https://github.com/AkkozaDevelops/PCStats-Rich-Presence\n\nIssues? you can either\nAdd me on Discord [Akkoza#3400]\nOR\nCreate a issue request on the Github Repo")
     # You don't have to keep this, but I would rather you do <3
 
+
+    import requests
     import time
     import re
 
@@ -41,6 +43,27 @@ def main_script():
         cpu_name = cpuinfo.get_cpu_info()["brand_raw"]
         start_time = time.time() - uptime.uptime()
 
+        if config["newVersion_warning"] != False:
+            try:
+                connection = requests.get("https://raw.githubusercontent.com/AkkozaDevelops/PCStats-Rich-Presence/main/version")
+
+                version = str(connection.content)
+                version = version[2 : : ]
+                version = version[:-1:]
+
+                currentVersion = str(json.load(open(me + "/version", "r")))
+
+                connection.close()
+
+                if version != currentVersion:
+                    print("\nThere is a new version available! [" + str(currentVersion) + " => " + str(version) + "]")
+                    print("\nRepository: https://github.com/AkkozaDevelops/PCStats-Rich-Presence")
+                else:
+                    print("\nThis version is up to date!\n")
+            except Exception as e:
+                print("\nException whilst trying to get latest version\n" + str(e) + "\n\n")
+        else:
+            print("\nVersion checking is disabled!")
 
         if config["order"][0] == "GPU" or config["order"][1] == "GPU":
             try:
@@ -200,6 +223,15 @@ def main_script():
                 
 
 if __name__ == 'main':
-    main_script()
+    try:
+        main_script()
+    except Exception as e:
+        print(str(e))
 
 # done this way so the pyw file can import this main file and run it.
+
+try:
+    print("script ran out of params... weird?")
+    main_script()
+except Exception as e:
+    print(str(e))

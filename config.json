@@ -33,5 +33,7 @@
     "buttonsEnabled": false,
 
     "includeCPU_frequency": true,
-    "includeCPU_model": true
+    "includeCPU_model": true,
+
+    "newVersion_warning": true
 }
