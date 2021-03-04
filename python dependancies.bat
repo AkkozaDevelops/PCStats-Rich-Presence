@@ -2,13 +2,13 @@
 cls
 
 echo Upgrading pip
-py -m pip install –upgrade pip
+py -m pip install --upgrade pip
 
-pip install --user requests
-pip install --user pypresence
-pip install --user psutil
-pip install --user uptime
-pip install --user py-cpuinfo
+pip install --user requests -U
+pip install --user pypresence -U
+pip install --user psutil -U
+pip install --user uptime -U 
+pip install --user py-cpuinfo -U
 
 echo  
 echo  
