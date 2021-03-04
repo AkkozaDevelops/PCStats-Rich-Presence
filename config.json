@@ -13,8 +13,8 @@
 
     "buttons": [
         {
-            "label": "",
-            "url" : ""
+            "label": "Want to set this up?",
+            "url" : "https://github.com/AkkozaDevelops/PCStats-Rich-Presence/blob/main/README.md"
         },
         {
             
@@ -30,7 +30,7 @@
 
     "includePartyInvite": true,
     "includeUptime": true,
-    "buttonsEnabled": true,
+    "buttonsEnabled": false,
 
     "includeCPU_frequency": true,
     "includeCPU_model": true
