@@ -159,16 +159,16 @@ def main_script():
             if config["order"][0] == "CPU":
                 topText = "CPU: "+str(cpu_per)+"% " + cpuAddon
             elif config["order"][0] == "RAM":
-                topText = "RAM: "+str(mem_per)+"% (" + str(round(mem.used / 1000000000, 2)) + "/" + str(round(mem.total / 1000000000, 2)) + " GB)"
+                topText = "RAM: "+str(mem_per)+"% (" + str(round(mem.used / 1024000000, 2)) + "/" + str(round(mem.total / 1024000000, 2)) + " GB)"
             elif config["order"][0] == "GPU":
-                topText = "GPU: " + str(GPUtil.getGPUs()[0].load * 100) + "% (" + str(round(GPUtil.getGPUs()[0].memoryUsed / 1000, 1)) + "/" + str(round(GPUtil.getGPUs()[0].memoryTotal / 1000, 1)) + "GB)"
+                topText = "GPU: " + str(GPUtil.getGPUs()[0].load * 100) + "% (" + str(round(GPUtil.getGPUs()[0].memoryUsed / 1024, 1)) + "/" + str(round(GPUtil.getGPUs()[0].memoryTotal / 1024, 1)) + "GB)"
 
             if config["order"][1] == "CPU":
                 bottomText = "CPU: "+str(cpu_per)+"% " + cpuAddon
             elif config["order"][1] == "RAM":
-                bottomText = "RAM: "+str(mem_per)+"% (" + str(round(mem.used / 1000000000, 2)) + "/" + str(round(mem.total / 1000000000, 2)) + " GB)"
+                bottomText = "RAM: "+str(mem_per)+"% (" + str(round(mem.used / 1024000000, 2)) + "/" + str(round(mem.total / 1024000000, 2)) + " GB)"
             elif config["order"][1] == "GPU":
-                bottomText = "GPU: " + str(GPUtil.getGPUs()[0].load * 100) + "% (" + str(round(GPUtil.getGPUs()[0].memoryUsed / 1000, 1)) + "/" + str(round(GPUtil.getGPUs()[0].memoryTotal / 1000, 1)) + "GB)"
+                bottomText = "GPU: " + str(GPUtil.getGPUs()[0].load * 100) + "% (" + str(round(GPUtil.getGPUs()[0].memoryUsed / 1024, 1)) + "/" + str(round(GPUtil.getGPUs()[0].memoryTotal / 1024, 1)) + "GB)"
 
 
 
