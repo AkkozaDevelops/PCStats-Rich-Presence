@@ -67,7 +67,9 @@ You also need to install these packages using these commands in the command prom
 
 > pip install --user pypresence
 
-  
+
+> pip install --user requests
+
 
 > pip install --user psutil
 
